@@ -36,5 +36,14 @@ app.post("/api/notes", (req, res) => {
     var existingNotes = JSON.parse(data);
     existingNotes.push(noteObj);
     console.log(existingNotes);
+
+    fs.writeFile(
+      "db/db.json",
+      JSON.stringify(existingNotes, null, "\t"),
+      function (error) {
+        if (error) throw error;
+        return res.json(existingNotes);
+      }
+    );
   });
 });
