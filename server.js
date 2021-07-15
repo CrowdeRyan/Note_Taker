@@ -16,3 +16,11 @@ app.use(express.static("public"));
 app.get("/notes", (req, res) => {
   res.sendFile(path.join(__dirname, "notes.html"));
 });
+
+// api routes
+app.get("/api/notes", (req, res) => {
+  fs.readFile("db/db.json", function (error, data) {
+    if (error) throw error;
+    res.json(JSON.parse(data));
+  });
+});
