@@ -24,3 +24,10 @@ app.get("/api/notes", (req, res) => {
     res.json(JSON.parse(data));
   });
 });
+
+// post method
+app.post("/api/notes", (req, res) => {
+  const noteObj = req.body;
+  noteObj.id = uuidv1();
+  console.log(noteObj);
+});
