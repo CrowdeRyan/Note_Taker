@@ -48,6 +48,23 @@ app.post("/api/notes", (req, res) => {
   });
 });
 
+// delete Method -- come back
+app.delete("/api/notes/:id", (req, res) => {
+  var chosenNote = req.params.id;
+  fs.readFile("db/db.json", function (error, data) {
+    if (error) throw error;
+    var existingNotes = JSON.parse(data);
+    var newNote = function () {
+      for (let index = 0; index < existingNotes.length; index++) {
+        if (chosenNote == existingNotes[index].id) {
+          var newArray = existingNotes.splice(index, 1);
+          return newArray;
+        }
+      }
+    };
+  });
+});
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
