@@ -63,6 +63,14 @@ app.delete("/api/notes/:id", (req, res) => {
       }
     };
     newNote();
+    fs.writeFile(
+      "db/db.json",
+      JSON.stringify(existingNotes, null, "\t"),
+      function (error) {
+        if (error) throw errow;
+        return res.json(existingNotes);
+      }
+    );
   });
 });
 
