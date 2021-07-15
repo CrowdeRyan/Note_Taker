@@ -3,3 +3,7 @@ const express = require("express");
 const { v1: uuidv1 } = require("uuid");
 const path = require("path");
 const fs = require("fs");
+
+const app = express();
+
+const PORT = process.env.PORT || 8080;
