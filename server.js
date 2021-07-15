@@ -30,4 +30,11 @@ app.post("/api/notes", (req, res) => {
   const noteObj = req.body;
   noteObj.id = uuidv1();
   console.log(noteObj);
+
+  fs.readFile("db/db.json", function (error, data) {
+    if (error) throw errow;
+    var existingNotes = JSON.parse(data);
+    existingNotes.push(noteObj);
+    console.log(existingNotes);
+  });
 });
