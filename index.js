@@ -90,3 +90,13 @@ const handleNewNoteView = function () {
   activeNote = {};
   renderActiveNote();
 };
+
+// If text areas are empty, hide the save button until filled
+
+const handleRenderSaveBtn = function () {
+  if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
+    $saveNoteBtn.hide();
+  } else {
+    $saveNoteBtn.show();
+  }
+};
