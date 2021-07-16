@@ -106,6 +106,9 @@ const renderNoteList = (notes) => {
   $noteList.empty();
 
   const noteListItems = [];
+
+  // Returns object with given text and delete button
+
   const create$li = (text, withDeleteButton = true) => {
     const $li = $("<li class='list-group-item'>");
     const $span = $("<span>").text(text);
@@ -119,6 +122,7 @@ const renderNoteList = (notes) => {
     }
     return $li;
   };
+
   if (notes.length === 0) {
     noteListItems.push(create$li("No saved Notes", false));
   }
@@ -142,3 +146,6 @@ $newNoteBtn.on("click", handleNewNoteView);
 $noteList.on("click", ".delete-note", handleNoteDelete);
 $noteTitle.on("keyup", handleRenderSaveBtn);
 $noteText.on("keyup", handleRenderSaveBtn);
+
+// Gets and renders the initial list of notes
+getAndRenderNotes();
