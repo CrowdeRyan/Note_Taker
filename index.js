@@ -31,3 +31,20 @@ const deleteNote = (id) => {
     method: "DELETE",
   });
 };
+
+// If there is an activeNote, display it - otherwise show empty
+const renderActiveNote = () => {
+  $saveNoteBtn.hide();
+
+  if (activeNote.id) {
+    $noteTitle.attr("readonly", true);
+    $noteText.attr("readonly", true);
+    $noteTitle.val(activeNote.title);
+    $noteText.val(activeNote.text);
+  } else {
+    $noteTitle.attr("readonly", false);
+    $noteText.attr("readonly", false);
+    $noteTitle.val("");
+    $noteText.val("");
+  }
+};
