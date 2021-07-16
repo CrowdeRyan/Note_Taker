@@ -11,3 +11,14 @@
 # Installation:
 
     Open heroku link and click "Get Started"
+
+# Usage:
+
+    Use "Note Title" and "Note Text" text area to write a note
+
+![Blank page](./readme-images/blank-note.png)
+![Filled text areas](./readme-images/note1.png)
+
+    Hit the save button to store in list; select from list to recall.
+
+![Saved note](./readme-images/saved-note.png)
