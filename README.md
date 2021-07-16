@@ -22,3 +22,7 @@
     Hit the save button to store in list; select from list to recall.
 
 ![Saved note](./readme-images/saved-note.png)
+
+# Questions: https://github.com/Crowderyan
+
+### Email me: <a href="mailto:Rebuiltrival@gmail.com" hspace="20">Rebuiltrival@gmail.com</a>
