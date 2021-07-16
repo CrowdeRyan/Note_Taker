@@ -7,3 +7,7 @@
 ## Description: App to write, title, save, recall, and delete notes using text area and title bar.
 
 ![Start Page](./readme-images/start-page.png)
+
+# Installation:
+
+    Open heroku link and click "Get Started"
