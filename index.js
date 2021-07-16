@@ -130,3 +130,8 @@ const renderNoteList = (notes) => {
 
   $noteList.append(noteListItems);
 };
+
+// Gets notes from the db and displays them on the sidebar
+const getAndRenderNotes = () => {
+  return getNotes().then(renderNoteList);
+};
